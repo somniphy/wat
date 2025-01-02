@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const navigation = [
   { name: "Home", to: "/" },
@@ -21,13 +21,20 @@ export default function SiteHeader() {
           </Link>
           <nav className="flex items-center gap-4 text-sm lg:gap-6">
             {navigation.map((item) => (
-              <Link
+              <NavLink
                 key={item.name}
                 to={item.to}
-                className="transition-colors hover:text-zinc-950/45 text-zinc-950"
+                className={({ isActive, isPending, isTransitioning }) =>
+                  [
+                    "text-sm transition-all",
+                    isPending ? "text-zinc-500" : "",
+                    isActive ? "font-semibold" : "",
+                    isTransitioning ? "opacity-75" : "",
+                  ].join(" ")
+                }
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>

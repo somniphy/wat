@@ -2,12 +2,12 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Welcome() {
   return (
-    <div className="container mx-auto flex flex-col py-24">
-      <h1 className="text-4xl text-zinc-950 font-bold selection:text-red-800">Christian Penales</h1>
+    <div className="flex flex-col py-24 w-1/2">
+     
       <h2 className="text-zinc-950 text-7xl font-bold uppercase selection:text-red-800">
-        Web Developer
+        Christian Penales
       </h2>
-      <div className="py-6 flex flex-row gap-4 selection:text-red-800">
+      <div className="py-6 flex flex-wrap gap-4 selection:text-red-800">
         <div>
           <a
             href={"https://github.com/somniphy"}

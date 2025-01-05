@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-import Services from "~/welcome/services";
+import { Welcome } from "../home/welcome";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,8 +12,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <div className="container mx-auto grid-cols-1 md:flex justify-between">
-      <Welcome />
-      <Services />
+      {/* <Welcome /> */}
     </div>
   )
 }

@@ -1,18 +1,20 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../home/welcome";
+import { Cta } from "../home/cta";
+import Services from "~/home/services";
 
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "chrisp - Home" },
+    { name: "description", content: "Welcome to my Portfolio!" },
   ];
 }
 
 export default function Home() {
   return (
-    <div className="container mx-auto grid-cols-1 md:flex justify-between">
-      {/* <Welcome /> */}
+    <div className="container mx-auto px-4">
+      <Cta />
+      <Services />
     </div>
   )
 }

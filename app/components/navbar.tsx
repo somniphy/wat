@@ -2,6 +2,7 @@ import {
   DribbbleIcon,
   GithubIcon,
   InstagramIcon,
+  LinkedinIcon,
   MenuIcon,
   XIcon,
 } from "lucide-react";
@@ -45,13 +46,32 @@ export default function Navbar() {
             ))}
           </div>
           <div className="inline-flex gap-2 items-center">
-            <Link to="" target="_blank" className="bg-lime-400 rounded-3xl p-2">
+            <Link
+              to="https://github.com/somniphy"
+              target="_blank"
+              className="bg-lime-400 rounded-3xl p-2"
+            >
               <GithubIcon className="w-4 h-4 text-zinc-900" />
             </Link>
-            <Link to="" className="bg-lime-400 rounded-3xl p-2">
+            <Link
+              to="https://www.linkedin.com/in/chrispenales"
+              target="_blank"
+              className="bg-lime-400 rounded-3xl p-2"
+            >
+              <LinkedinIcon className="w-4 h-4 text-zinc-900" />
+            </Link>
+            <Link
+              to="https://dribbble.com/chan999u"
+              target="_blank"
+              className="bg-lime-400 rounded-3xl p-2"
+            >
               <DribbbleIcon className="w-4 h-4 text-zinc-900" />
             </Link>
-            <Link to="" className="bg-lime-400 rounded-3xl p-2">
+            <Link
+              to="https://instagram.com/chan999u"
+              target="_blank"
+              className="bg-lime-400 rounded-3xl p-2"
+            >
               <InstagramIcon className="w-4 h-4 text-zinc-900" />
             </Link>
             <div className="md:hidden">
@@ -73,14 +93,21 @@ export default function Navbar() {
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-4">
           {navigation.map((item) => (
-            <Link
+            <NavLink
               key={item.name}
               to={item.to}
-              className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-800 transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
+              className={({ isActive, isPending, isTransitioning }) =>
+                [
+                  "block px-3 py-2 text-zinc-50 text-sm transition-colors",
+                  isPending ? "text-zinc-500" : "",
+                  isActive ? "text-lime-400" : "",
+                  isTransitioning ? "opacity-75" : "",
+                ].join(" ")
+              }
+              onClick={() => setIsOpen(true)}
             >
               {item.name}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>

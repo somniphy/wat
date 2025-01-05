@@ -1,3 +1,12 @@
+import type { Route } from "./+types/about";
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "chrisp - About" },
+  ];
+}
+
+
 export default function About() {
   return (
     <div className="container mx-auto">

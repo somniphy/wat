@@ -34,7 +34,7 @@ export default function Navbar() {
                 to={item.to}
                 className={({ isActive, isPending, isTransitioning }) =>
                   [
-                    "text-zinc-50 text-sm transition-colors",
+                    "text-sm transition-colors",
                     isPending ? "text-zinc-500" : "",
                     isActive ? "text-lime-400" : "",
                     isTransitioning ? "opacity-75" : "",

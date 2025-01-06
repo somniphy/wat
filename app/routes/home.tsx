@@ -1,4 +1,6 @@
+import { ArrowRightCircleIcon } from "lucide-react";
 import type { Route } from "./+types/home";
+import { Link } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -31,13 +33,23 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <h1>Latest Works</h1>
-      <div className="grid grid-cols-1 md:flex gap-2 overflow-x-scroll py-2">
-        <div className="bg-zinc-800 p-4 w-auto md:w-64 h-64 rounded-md"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-64 h-64 rounded-md"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-64 h-64 rounded-md"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-64 h-64 rounded-md"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-64 h-64 rounded-md"></div>
+      <div className="flex justify-between items-center">
+        <h1>Latest Works</h1>
+        <Link to="projects" className="hover:underline flex gap-1">
+          View More
+          <ArrowRightCircleIcon className="text-lime-400" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 md:flex gap-2 py-2">
+        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200">
+          <div className="bg-lime-400 w-32 text-center rounded-full text-sm p-2 text-zinc-950">
+            View Details
+          </div>
+        </div>
+        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
+        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
+        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
+        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const navigation = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full backdrop-blur">
       <div className="container mx-auto px-4">
         <nav className="h-16 flex justify-between items-center">
           <Link to="/" className="flex">
@@ -34,7 +34,7 @@ export default function Navbar() {
                 to={item.to}
                 className={({ isActive, isPending, isTransitioning }) =>
                   [
-                    "text-sm transition-colors",
+                    "text-sm hover:text-zinc-500 transition-colors",
                     isPending ? "text-zinc-500" : "",
                     isActive ? "text-lime-400" : "",
                     isTransitioning ? "opacity-75" : "",
@@ -49,28 +49,28 @@ export default function Navbar() {
             <Link
               to="https://github.com/somniphy"
               target="_blank"
-              className="bg-lime-400 rounded-3xl p-2"
+              className="bg-lime-400 hover:bg-lime-500 rounded-3xl p-2"
             >
               <GithubIcon className="w-4 h-4 text-zinc-900" />
             </Link>
             <Link
               to="https://www.linkedin.com/in/chrispenales"
               target="_blank"
-              className="bg-lime-400 rounded-3xl p-2"
+              className="bg-lime-400 hover:bg-lime-500 rounded-3xl p-2"
             >
               <LinkedinIcon className="w-4 h-4 text-zinc-900" />
             </Link>
             <Link
               to="https://dribbble.com/chan999u"
               target="_blank"
-              className="bg-lime-400 rounded-3xl p-2"
+              className="bg-lime-400 hover:bg-lime-500 rounded-3xl p-2"
             >
               <DribbbleIcon className="w-4 h-4 text-zinc-900" />
             </Link>
             <Link
               to="https://instagram.com/chan999u"
               target="_blank"
-              className="bg-lime-400 rounded-3xl p-2"
+              className="bg-lime-400 hover:bg-lime-500 rounded-3xl p-2"
             >
               <InstagramIcon className="w-4 h-4 text-zinc-900" />
             </Link>
@@ -91,14 +91,14 @@ export default function Navbar() {
         </nav>
       </div>
       <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-4">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-4 transition-all">
           {navigation.map((item) => (
             <NavLink
               key={item.name}
               to={item.to}
               className={({ isActive, isPending, isTransitioning }) =>
                 [
-                  "block px-3 py-2 text-zinc-50 text-sm transition-colors",
+                  "block px-3 py-2 text-zinc-50 text-sm  transition-colors",
                   isPending ? "text-zinc-500" : "",
                   isActive ? "text-lime-400" : "",
                   isTransitioning ? "opacity-75" : "",

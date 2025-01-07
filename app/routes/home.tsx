@@ -1,6 +1,7 @@
 import { ArrowRightCircleIcon } from "lucide-react";
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
+import ProjectCard from "~/components/project-card";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,25 +11,65 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const services = [
-  "Web Design",
-  "Logo and Branding",
-  "Web Development",
-  "Search Engine Optimization",
-  "Shopify and WordPress Themes",
+  { id: 1, name: "Web Design" },
+  { id: 2, name: "Logo and Branding" },
+  { id: 3, name: "Web Development" },
+  { id: 4, name: "Search Engine Optimization" },
+  { id: 5, name: "Shopify and WordPress Themes" },
+];
+
+const projects = [
+  {
+    id: 1,
+    name: "Project Name",
+    description: "I could be dumb",
+    image_url: "https://via.placeholder.com/400x200",
+    price: "2100",
+  },
+  {
+    id: 2,
+    name: "Project Name",
+    description: "I could be dumb",
+    image_url: "https://via.placeholder.com/400x200",
+    price: "22000",
+  },
+  {
+    id: 3,
+    name: "Project Name",
+    description: "I could be dumb",
+    image_url: "https://via.placeholder.com/400x200",
+    price: "23000",
+  },
+  {
+    id: 4,
+    name: "Project Name",
+    description: "I could be dumb",
+    image_url: "https://via.placeholder.com/400x200",
+    price: "24000",
+  },
+  {
+    id: 5,
+    name: "Project Name",
+    description: "I could be dumb",
+    image_url: "https://via.placeholder.com/400x200",
+    price: "25000",
+  },
 ];
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
       <div className="py-12">
-        <h1 className="pt-2 text-lime-400 text-6xl md:text-9xl font-semibold">
-          <span className="text-zinc-50">[</span>PORTFOLIO
+        <h1 className="pt-2 text-lime-400 text-6xl md:text-9xl font-semibold  ">
+          <span className="text-zinc-50 ">[</span>PORTFOLIO
           <span className="text-zinc-50">]</span>
         </h1>
         <div className="py-2 flex flex-wrap gap-2">
           {services.map((service) => (
             <div className="rounded-full p-2 bg-zinc-800">
-              <span className="text-lime-400 text-sm p-2">{service}</span>
+              <span key={service.id} className="text-lime-400 text-sm p-2">
+                {service.name}
+              </span>
             </div>
           ))}
         </div>
@@ -40,16 +81,10 @@ export default function Home() {
           <ArrowRightCircleIcon className="text-lime-400" />
         </Link>
       </div>
-      <div className="grid grid-cols-1 md:flex gap-2 py-2">
-        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200">
-          <div className="bg-lime-400 w-32 text-center rounded-full text-sm p-2 text-zinc-950">
-            View Details
-          </div>
-        </div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
-        <div className="bg-zinc-800 p-4 w-auto md:w-72 h-64 rounded-md hover:scale-105 transition-all duration-200"></div>
+      <div className="grid grid-cols-1 md:flex gap-2 py-6">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
     </div>
   );

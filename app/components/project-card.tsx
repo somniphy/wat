@@ -14,14 +14,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         src={project.image_url}
         alt={project.name}
       />
-      <div className="p-5">
+      <div className="p-4">
         <h5 className="mb-2 font-bold tracking-tight text-lime-400">
           {project.name}
         </h5>
-        <p className="mb-4 text-zinc-50 text-sm">{project.description}</p>
+        <p className="mb-4 text-zinc-50 text-sm text-wrap">{project.description}</p>
         <Link
           to="/"
-          className="inline-flex gap-1 px-4 py-2 text-sm text-zinc-900 bg-lime-400 rounded-full hover:bg-lime-500"
+          className="inline-flex gap-1 px-4 py-2 text-sm text-zinc-900 bg-lime-400 rounded-full hover:bg-lime-300 transition-colors duration-300"
         >View Details
         <ArrowRightCircleIcon />
         </Link>

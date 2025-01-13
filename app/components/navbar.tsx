@@ -98,13 +98,13 @@ export default function Navbar() {
               to={item.to}
               className={({ isActive, isPending, isTransitioning }) =>
                 [
-                  "block px-3 py-2 text-zinc-50 text-sm  transition-colors",
+                  "block px-3 py-2 text-sm  transition-colors",
                   isPending ? "text-zinc-500" : "",
                   isActive ? "text-lime-400" : "",
                   isTransitioning ? "opacity-75" : "",
                 ].join(" ")
               }
-              onClick={() => setIsOpen(true)}
+              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </NavLink>

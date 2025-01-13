@@ -2,7 +2,7 @@ import { ArrowRightCircleIcon } from "lucide-react";
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
 import ProjectCard from "~/components/project-card";
-
+import Jekkey from '../assets/jekkey.png'
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "chrisp - Home" },
@@ -18,51 +18,12 @@ const services = [
   { id: 5, name: "Shopify and WordPress Themes" },
 ];
 
-const projects = [
-  {
-    id: 1,
-    name: "Project Name",
-    description: "I could be dumb",
-    image_url: "https://via.placeholder.com/400x200",
-    price: "2100",
-  },
-  {
-    id: 2,
-    name: "Project Name",
-    description: "I could be dumb",
-    image_url: "https://via.placeholder.com/400x200",
-    price: "22000",
-  },
-  {
-    id: 3,
-    name: "Project Name",
-    description: "I could be dumb",
-    image_url: "https://via.placeholder.com/400x200",
-    price: "23000",
-  },
-  {
-    id: 4,
-    name: "Project Name",
-    description: "I could be dumb",
-    image_url: "https://via.placeholder.com/400x200",
-    price: "24000",
-  },
-  {
-    id: 5,
-    name: "Project Name",
-    description: "I could be dumb",
-    image_url: "https://via.placeholder.com/400x200",
-    price: "25000",
-  },
-];
-
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
       <div className="py-12">
         <h1 className="pt-2 text-lime-400 text-6xl md:text-9xl font-semibold  ">
-          <span className="text-zinc-50 ">[</span>PORTFOLIO
-          <span className="text-zinc-50">]</span>
+          PORTFOLIO
         </h1>
         <div className="py-2 flex flex-wrap gap-2">
           {services.map((service) => (
@@ -82,9 +43,30 @@ export default function Home() {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:flex gap-2 py-6">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        <div className="max-w-md rounded-md bg-zinc-800 hover:scale-105 transition-all duration-200">
+          <img
+            className="rounded-t-lg"
+            height={240}
+            width={240}
+            src={Jekkey}
+            alt="jekkey"
+          />
+          <div className="p-4">
+            <h5 className="mb-2 font-bold tracking-tight text-lime-400">
+              Jekkey Portfolio
+            </h5>
+            <p className="mb-4 text-zinc-50 text-sm text-wrap">
+              
+            </p>
+            <Link
+              to="/jekkey/home"
+              className="inline-flex gap-1 px-4 py-2 text-sm text-zinc-900 bg-lime-400 rounded-full hover:bg-lime-300 transition-colors duration-300"
+            >
+              View Details
+              <ArrowRightCircleIcon />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

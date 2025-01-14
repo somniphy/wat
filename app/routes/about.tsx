@@ -6,7 +6,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-
 export default function About() {
   return (
     <div className="container mx-auto">

@@ -2,7 +2,7 @@ import { ArrowRightCircleIcon } from "lucide-react";
 import type { Route } from "./+types/home";
 import { Link } from "react-router";
 import ProjectCard from "~/components/project-card";
-import Jekkey from '../assets/jekkey.png'
+import Jekkey from '../assets/jekkey/jekkey.png'
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "chrisp - Home" },
@@ -59,7 +59,7 @@ export default function Home() {
               
             </p>
             <Link
-              to="/jekkey/home"
+              to="jekkey"
               className="inline-flex gap-1 px-4 py-2 text-sm text-zinc-900 bg-lime-400 rounded-full hover:bg-lime-300 transition-colors duration-300"
             >
               View Details

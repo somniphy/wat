@@ -34,8 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-zinc-900 min-h-screen">
-       <Navbar />
+      <body>
         <main>{children}</main>
         <ScrollRestoration />
         <Scripts />

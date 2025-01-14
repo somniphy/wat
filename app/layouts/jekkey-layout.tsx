@@ -1,25 +1,30 @@
-import { Link } from "react-router";
+import { Link, Outlet } from "react-router";
 
 export default function JekkeyLayout() {
   return (
-    <header className="h-24">
-      <nav className="flex justify-between bg-transparent">
-        <div className="text-white font-bold text-sm">JEKKEY</div>
-        <div className="text-white text-sm uppercase">
+    <div>
+      <header className="h-[88px] px-[32px] flex justify-between items-center bg-[#090909]">
+        <Link to="/jekkey" className="text-white text-[20px] font-bold">
+          JEKKEY®
+        </Link>
+        <p className="text-white uppercase text-[20px]">
           ARCHITECTURE PHOTOGRAPHY PORTFOLIO
-        </div>
-        <div className="flex justify-between">
-          <Link to="/jekkey" className="text-sm text-white uppercase">
+        </p>
+        <nav className="flex gap-[48px]">
+          <Link to="jekkey" className="text-white uppercase text-[20px]">
             Gallery
           </Link>
-          <Link to="/jekkey" className="text-sm text-white uppercase">
+          <Link to="jekkey" className="text-white uppercase text-[20px]">
             About
           </Link>
-          <Link to="/jekkey" className="text-sm text-white uppercase">
+          <Link to="jekkey" className="text-white uppercase text-[20px]">
             Contact
           </Link>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
   );
 }

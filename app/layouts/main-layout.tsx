@@ -24,7 +24,7 @@ import {
         <div className="container mx-auto px-4">
           <nav className="h-16 flex justify-between items-center">
             <Link to="/" className="flex">
-              <h1 className="text-zinc-50 text-2xl font-bold">
+              <h1 className="text-zinc-900 text-2xl font-bold">
                 chrisp<span className="text-lime-400">.</span>
               </h1>
             </Link>
